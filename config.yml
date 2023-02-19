@@ -1,21 +1,33 @@
 version: 1
+genesis:
+  app_state:
+    staking:
+      params:
+        bond_denom: "upom"
+    crisis:
+      constant_fee:
+        denom: "upom"
+    gov:
+      deposit_params:
+        min_deposit:
+          denom: "upom"
+    mint:
+      params:
+        mint_denom: "upom"
 accounts:
 - name: alice
   coins:
-  - 20000token
-  - 200000000stake
+  - 200000000upom
 - name: bob
   coins:
-  - 10000token
-  - 100000000stake
+  - 100000000upom
 client:
   openapi:
     path: docs/static/openapi.yml
 faucet:
   name: bob
   coins:
-  - 5token
-  - 100000stake
+  - 100000upom
 validators:
 - name: alice
-  bonded: 100000000stake
+  bonded: 100000000upom
